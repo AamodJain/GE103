@@ -1,3 +1,14 @@
+def edgeListToDict(edgeList):  # edgeList = [('a','b'),('a','c'),('a','d'),('b','c'),('b','e'),('b','d'),('c','e'),('c','d')] -->
+                               # degeDict = {'a': ['b', 'c', 'd'], 'b': ['a', 'c', 'e', 'd'], 'c': ['a', 'b', 'e', 'd'], 'd': ['a', 'b', 'c'], 'e': ['b', 'c']}
+    d = {}
+    for i in edgeList:
+        d[i[0]]=[]
+        d[i[1]]=[]
+    for i in edgeList:
+        d[i[0]].append(i[1])
+        d[i[1]].append(i[0])
+    return d
+
 def BSF(d,starting_node):
     #global d
     visited_nodes = []
